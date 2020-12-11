@@ -1,4 +1,4 @@
-package runner;
+package bdd.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/main/java/stories",
-        glue = "src/main/java/steps" ,
+        features = "src/test/java/stories",
+        glue = "bdd/steps",
         stepNotifications = true)
 public class cucumberRunner {
 }

@@ -1,4 +1,4 @@
-package hook;
+package bdd.hook;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
