@@ -8,7 +8,7 @@ Feature: Movimiento en una Zona de Busqueda.
     Example: El Jugador 1 encuentra la esquina superior derecha
       Given Soy el Jugador 1
       And está empezando el juego
-      When me desplazo 3 posiciones hacia arriba
+      When me muevo 3 posiciones hacia arriba
       Then llego a la esquina superior derecha de la zona
 
     Example: El Jugador 1 encuentra la esquina superior izquierda
