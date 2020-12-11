@@ -1,15 +1,17 @@
+package support;
+
 class Fighter
 {
     static int count;  // CLASS VARIABLE: how many fighters there are
 
     int strength = 1;      // my strength
     int direction;         // direction I'm facing
-    Battleground place;    // the Battleground that I fight on
+    Battleground place;    // the support.Battleground that I fight on
     int row, column;       // where I am
     int newRow, newColumn; // where I want to be
     int lastMoved = -1;    // last turn that I did something
 
-    Fighter (Battleground place, int row, int column)  // Construct a Fighter.
+    Fighter (Battleground place, int row, int column)  // Construct a support.Fighter.
     {
         direction = (int) (Math.random () * 4);  // face in a direction 0 to 3
         this.place = place;                      // remember my battleground

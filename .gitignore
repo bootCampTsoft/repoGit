@@ -1,2 +1,5 @@
-/target/classes/Battleground.class
+/target/*
+/target/classes/support.Fighter.class
 /target/classes/Fighter.class
+/.idea/libraries/Maven__info_cukes_cucumber_java_1_2_5.xml
+/.idea/uiDesigner.xml
