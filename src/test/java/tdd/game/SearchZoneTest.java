@@ -7,17 +7,16 @@ import game.Player;
 import game.SearchZone;
 import org.junit.Test;
 
-public class SearchZoneTest {
+public class SearchZoneTest{
 
     @Test
     public void validarDimensionesSearchZone(){
-
         Player player_one = new Player("juan");
         SearchZone search = new SearchZone(player_one);
-
-        assertEquals("aquiva el valor",search.getBoardSize()); //si el tablero es de 7x7 = 49
-
+        assertEquals("49",search.getBoardSize()); //si el tablero es de 7x7 = 49
     }
+
+
 
 
 
