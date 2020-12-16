@@ -65,9 +65,52 @@ public class Player {
      */
     public void moveUp()
     {
-        if (this.y_position-1>=0)
+        if (!this.search_zone.isTopBorder(this.y_position))
         {
             this.y_position = (this.y_position - 1);
         }
     }
+
+    /**
+     * Mueve en 1 paso al jugador en direccion hacia abajo.
+     *
+     * Si se llega a un borde inferior de la zona de busqueda, no se mueve.
+     *
+     */
+    public void moveDown()
+    {
+        if (!this.search_zone.isDownBorder(this.y_position))
+        {
+            this.y_position = (this.y_position + 1);
+        }
+    }
+
+    /**
+     * Mueve en 1 paso al jugador en direccion hacia la izquierda.
+     *
+     * Si se llega al borde izquierdo de la zona de busqueda, no se mueve.
+     *
+     */
+    public void moveLeft()
+    {
+        if (!this.search_zone.isLeftBorder(this.x_position))
+        {
+            this.x_position = (this.x_position - 1);
+        }
+    }
+
+    /**
+     * Mueve en 1 paso al jugador en direccion hacia la derecha.
+     *
+     * Si se llega al borde derecho de la zona de busqueda, no se mueve.
+     *
+     */
+    public void moveRight()
+    {
+        if (!this.search_zone.isRightBorder(this.x_position))
+        {
+            this.x_position = (this.x_position + 1);
+        }
+    }
+
 }

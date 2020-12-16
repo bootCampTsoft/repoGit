@@ -1,13 +1,24 @@
 package game;
 
+import java.util.ArrayList;
+
 public class SearchZone {
 
-    private int zone[][];  //arreglo multidimensional que representa la zona de busqueda
+    private ArrayList<ArrayList<Integer>> zone; //arreglo multidimensional que representa la zona de busqueda
+    private final int MAX_VERTEX = 7;
 
     //Constructor
     public SearchZone(){
         //Se inicializa siempre en 7x7 la matriz que representa la zona de busqueda
-        this.zone = new int[7][7];
+        this.zone = new ArrayList<>(7);
+
+        for(int i=0; i < MAX_VERTEX; i++) {
+            this.zone.add(new ArrayList<>(7));
+            for(int j=0; j < MAX_VERTEX; j++)
+            {
+                this.zone.get(i).add(0);
+            }
+        }
     }
 
     /**
@@ -19,10 +30,78 @@ public class SearchZone {
     {
         int total_elements = 0;
 
-        for (int i = 0; i < this.zone.length; ++i) {
-            total_elements = total_elements + this.zone[i].length;
+        for (int i = 0; i < this.zone.size(); ++i) {
+            total_elements = total_elements + this.zone.get(i).size();
         }
         return total_elements;
+    }
+
+    /**
+     * Valida si la posicion que se envia por parametros corresponde al borde superior de la zona de busqueda
+     *
+     * @return true si llego al borde superior y false en caso contrario
+     */
+    public boolean isTopBorder(int y_position)
+    {
+        if (y_position == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Valida si la posicion que se envia por parametros corresponde al borde inferior de la zona de busqueda
+     *
+     * @return true si llego al borde inferior y false en caso contrario
+     */
+    public boolean isDownBorder(int y_position)
+    {
+        if (y_position == (MAX_VERTEX-1))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Valida si la posicion que se envia por parametros corresponde al borde de la izquierda de la zona de busqueda
+     *
+     * @return true si llego al borde izquierdo y false en caso contrario
+     */
+    public boolean isLeftBorder(int x_position)
+    {
+        if (x_position == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Valida si la posicion que se envia por parametros corresponde al borde derecho de la zona de busqueda
+     *
+     * @return true si llego al borde derecho y false en caso contrario
+     */
+    public boolean isRightBorder(int x_position)
+    {
+        if (x_position == (MAX_VERTEX-1))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -33,19 +112,28 @@ public class SearchZone {
     public void printZone()
     {
         System.out.println("Zona de Busqueda: ");
-        for (int i = 0; i < this.zone.length; ++i) {
-            for (int j = 0; j < this.zone[i].length; j++)
+        for (int i = 0; i < this.zone.size(); ++i) {
+            for (int j = 0; j < this.zone.get(i).size(); j++)
             {
-                if (j<(this.zone[i].length-1))
+                if (j<(this.zone.get(i).size()-1))
                 {
-                    System.out.print(this.zone[i][j] + " - ");
+                    System.out.print(this.zone.get(i).get(j) + " - ");
                 }
                 else
                 {
-                    System.out.println(this.zone[i][j]);
+                    System.out.println(this.zone.get(i).get(j));
                 }
             }
         }
     }
 
+    /**
+     * Este método devuelve la cantidad maxima de un eje de la zona de busqueda
+     *
+     * @return void
+     */
+    public int getMaxVertex()
+    {
+        return this.MAX_VERTEX;
+    }
 }

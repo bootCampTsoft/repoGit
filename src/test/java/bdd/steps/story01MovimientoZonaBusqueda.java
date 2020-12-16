@@ -14,8 +14,6 @@ public class story01MovimientoZonaBusqueda {
 
     @Given("Soy el Jugador {int}")
     public void soy_el_jugador(Integer int1) {
-        //Inicializar game.Player
-        Player player_one = new Player("juan");
         assertEquals("juan", player_one.getName());
     }
     @Given("está empezando el juego")
