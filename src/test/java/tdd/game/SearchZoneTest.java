@@ -26,11 +26,9 @@ public class SearchZoneTest {
     public void desplazarHaciaArriba(){
 
         Player p = new Player("Jugador");
-        System.out.println(p.getYPosition());
         if (p.getYPosition()==3)
         {
             p.moveUp();
-            System.out.println(p.getYPosition());
             assertEquals(2,p.getYPosition());
         }
         else
