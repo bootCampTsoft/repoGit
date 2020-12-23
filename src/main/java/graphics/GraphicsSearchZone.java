@@ -1,18 +1,23 @@
 package graphics;
 
+import game.SearchZone;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class GraphicsSearchZone extends JPanel {
 
-    Color color_fondo = Color.gray;
-    int tamaño_maximo, tamaño, cantidad_filas,residuo;
+    Color color_fondo = Color.lightGray;
+    int tamaño, cantidad_filas,residuo;
+    SearchZone sz;
 
-    public GraphicsSearchZone(int tamaño_maximo, int cantidad_filas){
-        this.tamaño_maximo = tamaño_maximo;
-        this.cantidad_filas = cantidad_filas;
-        this.tamaño = tamaño_maximo/cantidad_filas;
-        this.residuo = tamaño_maximo%cantidad_filas;
+
+       public  GraphicsSearchZone(){
+        sz = new SearchZone();
+        sz.printZone();
+        tamaño = 300/sz.getMaxVertex();
+        residuo = 300%sz.getMaxVertex();
     }
 
 
@@ -22,8 +27,8 @@ public class GraphicsSearchZone extends JPanel {
         super.paint(pintor);
         pintor.setColor(color_fondo);
         //Llenado de cuadricula
-        for (int i = 0; i < cantidad_filas; i++) {
-            for (int j = 0; j < cantidad_filas; j++) {
+        for (int i = 0; i < sz.getMaxVertex(); i++) {
+            for (int j = 0; j < sz.getMaxVertex(); j++) {
                 pintor.fillRect(residuo/2 +i *tamaño,residuo/2 +j*tamaño,tamaño-1,tamaño-1);
             }
             

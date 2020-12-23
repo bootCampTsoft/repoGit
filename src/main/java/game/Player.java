@@ -1,18 +1,25 @@
 package game;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Player {
 
     //atributos
     private String name;
+    ArrayList<int[]> movimientos_player;
     private SearchZone search_zone; //zona de busqueda del jugador
     private int x_position; //numero que representa la posicion en eje x de la matriz (de 0 a 6)
     private int y_position; //numero que representa la posicion en eje y de la matriz (de 0 a 6)
+    private int cantidad_movimientos =0;
+
 
     //Constructor
     public Player(String name){
         this.name = name;
-        this.x_position = 6;
-        this.y_position = 3;
+        movimientos_player = new ArrayList<>();
+        movimientos_player.add(0, new int[]{6,4});
+        //System.out.println(Arrays.toString(movimientos_player.get(0)));
     }
 
     /**
@@ -31,6 +38,7 @@ public class Player {
     public void addSearchZone(SearchZone s)
     {
         this.search_zone = s;
+
     }
 
     /**
@@ -56,6 +64,8 @@ public class Player {
     {
         return this.y_position;
     }
+
+
 
     /**
      * Mueve en 1 paso al jugador en direccion hacia arriba.
@@ -112,5 +122,6 @@ public class Player {
             this.x_position = (this.x_position + 1);
         }
     }
+
 
 }

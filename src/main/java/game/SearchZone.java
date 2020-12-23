@@ -1,6 +1,8 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SearchZone {
 
@@ -11,7 +13,6 @@ public class SearchZone {
     public SearchZone(){
         //Se inicializa siempre en 7x7 la matriz que representa la zona de busqueda
         this.zone = new ArrayList<>(7);
-
         for(int i=0; i < MAX_VERTEX; i++) {
             this.zone.add(new ArrayList<>(7));
             for(int j=0; j < MAX_VERTEX; j++)
@@ -19,6 +20,7 @@ public class SearchZone {
                 this.zone.get(i).add(0);
             }
         }
+        this.cargarBuffZonaBusqueda();
     }
 
     /**
@@ -136,4 +138,34 @@ public class SearchZone {
     {
         return this.MAX_VERTEX;
     }
+
+
+    /**
+     * Metodo para Cargar aleatoriamente en el Search Zone 6 espacios con Buff
+     *
+     */
+    public void cargarBuffZonaBusqueda(){
+
+        int coordenadas[][];
+        coordenadas = new int[6][2];
+        for (int i = 0; i <6 ; i++) {
+            int x = (int)(Math.random()*(7));
+            int y = (int)(Math.random()*(7));
+            for (int j = 0; j <=i ; j++) {
+                if((coordenadas[j][0] == x && coordenadas[j][1] == y) || coordenadas[j][0] == 6 && coordenadas[j][1] == 3){
+                        x = (int)(Math.random()*(7));
+                        y = (int)(Math.random()*(7));
+                    }
+                }
+            coordenadas[i][0] = x;
+            coordenadas[i][1] = y;
+        }
+        //cargar la zona
+        for (int i = 0; i < 6; i++) {
+                zone.get(coordenadas[i][0]).set(coordenadas[i][1],i+1);//proceso de buff al campo
+        }
+    }
+
 }
+
+

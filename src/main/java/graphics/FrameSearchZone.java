@@ -8,18 +8,27 @@ public class FrameSearchZone extends JFrame {
     private JPanel frame_zona_busqueda;
     private JTextArea resultados_busqueda;
     private JPanel graphics_search_zone;
+    private JPanel graphics_player_zone;
 
 
     public FrameSearchZone() {
-        //Cargar al Frame
+
+        //Cargar Zona de Busqueda
         this.add(frame_zona_busqueda);
         this.setTitle("Zona de Busqueda");
         this.setSize(500, 400);
+
+        //Cargar Player
+
+
+
+
 
 
     }
 
     private void createUIComponents() {
-        graphics_search_zone = new GraphicsSearchZone(300,7);
+
+       graphics_search_zone = new GraphicsSearchZone();
     }
 }
