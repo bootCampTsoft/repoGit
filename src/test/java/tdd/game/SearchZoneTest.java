@@ -15,9 +15,7 @@ public class SearchZoneTest {
 
         SearchZone search_zone = new SearchZone();
         assertEquals(49,search_zone.getBoardSize()); //si el tablero es de 7x7 = 49
-
     }
-
 
     @Test
     /**
@@ -160,6 +158,7 @@ public class SearchZoneTest {
         assertEquals(p.getSearchZone().getMaxVertex()-1,p.getYPosition());
 
     }
+
     @Test
     /**
      * Al iniciar una zona de busqueda se inicializa con 3 buff de defensa y 3 de ataque

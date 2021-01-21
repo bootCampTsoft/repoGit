@@ -5,7 +5,7 @@ Feature: Movimiento en una Zona de Busqueda.
   Para ver si obtengo algún BUFF
 
   Rule: El Jugador 1 comienza en la posición 7,4
-    Example: El Jugador 1 encuentra la esquina superior derecha
+    Example: El Ju1gador 1 encuentra la esquina superior derecha
       Given Soy el Jugador 1
       And está empezando el juego
       When me muevo 3 posiciones hacia arriba
