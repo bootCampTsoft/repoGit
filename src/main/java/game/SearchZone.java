@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class SearchZone {
 
     private ArrayList<ArrayList<Integer>> zone; //arreglo multidimensional que representa la zona de busqueda
-    private final int MAX_VERTEX = 7;
+    private final int MAX_VERTEX = 7; //representa la cantidad de filas y columnas de la zona de busqueda.
 
     //Constructor
     public SearchZone(){
-        //Se inicializa siempre en 7x7 la matriz que representa la zona de busqueda
-        this.zone = new ArrayList<>(7);
+        //Se inicializa siempre la matriz que representa la zona de busqueda
+        this.zone = new ArrayList<>(MAX_VERTEX);
 
         for(int i=0; i < MAX_VERTEX; i++) {
             this.zone.add(new ArrayList<>(7));

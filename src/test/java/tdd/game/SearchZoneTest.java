@@ -164,11 +164,11 @@ public class SearchZoneTest {
     /**
      * Al iniciar una zona de busqueda se inicializa con 3 buff de defensa y 3 de ataque
      */
-    public void buffSearchZone(){
+    public void initializationBuffSearchZone(){
 
-/*        SearchZone search = new SearchZone();
-        assertEquals(6,search.getTotalAttackBuff() + search.getTotalDefenseBuff()); //si el tablero es de 7x7 = 49
-*/
+        SearchZone search = new SearchZone();
+        assertEquals(6,search.getTotalAttackBuff() + search.getTotalDefenseBuff());
+
     }
 
 
