@@ -68,10 +68,10 @@ public class SearchZoneTest {
         Player p = new Player("Jugador");
         p.addSearchZone(new SearchZone());
 
-        if (p.getXPosition()==6)
+        if (p.getXPosition()==3)
         {
             p.moveLeft();
-            assertEquals(5,p.getXPosition());
+            assertEquals(2,p.getXPosition());
         }
         else
         {
@@ -90,10 +90,10 @@ public class SearchZoneTest {
         Player p = new Player("Jugador");
         p.addSearchZone(new SearchZone());
 
-        if (p.getXPosition()==6)
+        if (p.getXPosition()==3)
         {
             p.moveRight();
-            assertEquals(6,p.getXPosition());
+            assertEquals(4,p.getXPosition());
         }
         else
         {

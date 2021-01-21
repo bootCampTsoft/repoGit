@@ -167,6 +167,25 @@ public class SearchZone {
         }
     }
 
+    /**
+     * Devuelve el total de BUFF de ataque que tenga la zona de busqueda sin que hayan sido agarradas por el player.
+     *
+     * @return total buff de ataque disponible en la zona de busqueda
+     */
+    public int getTotalAttackBuff()
+    {
+        return 1;
+    }
+
+    /**
+     * Devuelve el total de BUFF de defensa que tenga la zona de busqueda sin que hayan sido agarradas por el player.
+     *
+     * @return total buff de defensa disponible en la zona de busqueda
+     */
+    public int getTotalDefenseBuff()
+    {
+        return 1;
+    }
 }
 
 

@@ -19,6 +19,10 @@ public class Player {
         this.name = name;
         movimientos_player = new ArrayList<>();
         movimientos_player.add(0, new int[]{6,4});
+
+        //el player comienza en el centro de la zona
+        this.x_position = 3;
+        this.y_position = 3;
         //System.out.println(Arrays.toString(movimientos_player.get(0)));
     }
 
